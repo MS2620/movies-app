@@ -31,10 +31,10 @@ function Upcoming() {
     }, []);
 
     return (
-        <>
+        <div className="bg-cyan-700">
             <Navbar />
-        <p className="font-bold text-4xl ml-8 mb-4">Upcoming Movies</p>
-        <div className="flex flex-wrap justify-center bg-teal-800 mb-2">
+        <p className="font-semibold text-4xl text-gray-300 ml-8 mb-2 mt-4">Upcoming Movies</p>
+        <div className="flex flex-wrap justify-center bg-cyan-700 mb-2">
         {upComingMovies.map((movie) => (
             <div className="w-[300px] rounded-md overflow-hidden relative shadow-2xl ml-9 mb-4 mt-4 group" key={movie.id}>
                 <img className="w-full object-cover" src={IMG_API + movie.poster_path} alt={movie.title} />
@@ -55,7 +55,7 @@ function Upcoming() {
             </div>
         ))}
         </div>
-    </>
+    </div>
     );
 }
 

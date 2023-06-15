@@ -5,6 +5,7 @@
 :root {
     --primary: teal;
     --secondary: darkturquoise;
+    --tertiary: #0e7490;
 }
 /* Firefox */
 * {
@@ -18,7 +19,7 @@
 }
 
 *::-webkit-scrollbar-track {
-    background: var(--primary);
+    background: var(--tertiary);
 }
 
 *::-webkit-scrollbar-thumb {

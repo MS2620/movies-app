@@ -30,10 +30,10 @@ function Series() {
             .catch(err => console.error(err));
     }, []);
     return (
-        <>
+        <div className="bg-cyan-700">
             <Navbar />
-            <p className="font-bold text-4xl ml-8 mb-2 inline-block">Series</p>
-            <div className="flex flex-row flex-grow overflow-x-scroll bg-teal-800 mb-2">
+            <p className="font-semibold text-4xl text-gray-300 pl-8 pb-2 inline-block">Series</p>
+            <div className="flex flex-row flex-grow overflow-x-scroll bg-cyan-700 mb-2">
                 {topSeries.map((series) => (
                     <div className="min-w-[300px] rounded-md overflow-hidden relative shadow-2xl ml-9 mb-4 mt-4 group " key={series.id}>
                         <img className="w-full object-cover" src={IMG_API + series.poster_path} alt={series.name} />
@@ -54,7 +54,7 @@ function Series() {
                     </div>
                 ))}
             </div>
-        </>
+        </div>
     )
 }
 

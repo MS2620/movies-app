@@ -31,7 +31,7 @@ export function Carousel() {
 
 return (
     <>
-    <p className="font-bold text-4xl ml-8 mb-2 inline-block">Top Rated Movies</p>
+    <p className="font-semibold text-4xl text-gray-300 ml-8 mb-2 inline-block">Top Rated Movies</p>
     <div className="flex flex-row flex-grow overflow-x-scroll bg-cyan-700 mb-2">
     {topMovies.map((movie) => (
             <div className="min-w-[300px] rounded-md overflow-hidden relative drop-shadow-2xl ml-9 mb-4 mt-4 group " key={movie.id}>

@@ -1,6 +1,5 @@
 import '../App.css';
 import React, {useEffect, useState} from "react";
-import { Link } from 'react-router-dom'
 import {Carousel} from "../components/Carousel";
 import Navbar from "../components/Navbar";
 
@@ -43,19 +42,28 @@ function Movies() {
         <div className="bg-cyan-700">
             <Carousel />
             <div className="flex flex-wrap justify-center bg-cyan-700 mb-2">
+            {/* Goes through the movies array and displays all items in the array */}
             {movies.map((movie) => (
+                // Creates a div for each movie
                 <div className="w-[300px] rounded-md overflow-hidden relative drop-shadow-2xl ml-9 mb-4 mt-4 group " key={movie.id}>
+                    {/* Adds the movie to each associated movie */}
                     <img className="w-full object-cover" src={IMG_API + movie.poster_path} alt={movie.title} />
+                    {/* Creates a div for the bottom of the card */}
                     <div className=" flex flex-row justify-between bg-cyan-600 h-20">
+                        {/* Displays the movies title */}
                         <p className="font-bold text-lg mt-2 mb-2 ml-2">
                             {movie.title}
                         </p>
+                        {/* Displays the movies average rating */}
                         <p className={`text-center font-bold bg-cyan-700 rounded-lg h-6 w-12 mr-2 mt-3 ${setVoteClass(movie.vote_average)}`}>
                             {movie.vote_average}
                         </p>
                     </div>
+                    {/* Creates a div for the overview which starts */}
                     <div className="px-2 pb-2 bg-white absolute bottom-0 right-0 left-0 translate-y-full group-hover:translate-y-0 transition-transform ease-in-out delay-150">
+                        {/* Adds the text Overview: */}
                         <h2 className="font-bold text-lg">Overview: </h2>
+                        {/* Adds the overview text if available if not it displays No overview available*/}
                         <p className="text-gray-700 text-base">
                             {movie.overview ? movie.overview : "No overview available"}
                         </p>
