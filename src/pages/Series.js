@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Navbar from "../components/Navbar";
+import Serie from "../components/Series";
 
 function Series() {
     const [topSeries, setTopSeries] = useState([]);
@@ -33,9 +34,12 @@ function Series() {
         <div className="bg-cyan-700">
             <Navbar />
             <p className="font-semibold text-4xl text-gray-300 pl-8 pb-2 inline-block">Series</p>
-            <div className="flex flex-row flex-grow overflow-x-scroll bg-cyan-700 mb-2">
+            {/* <div className="flex flex-row flex-grow overflow-x-scroll bg-cyan-700 mb-2"> */}
+            <div className="flex flex-wrap justify-center bg-cyan-700 mb-2">
                 {topSeries.map((series) => (
-                    <div className="min-w-[300px] rounded-md overflow-hidden relative shadow-2xl ml-9 mb-4 mt-4 group " key={series.id}>
+                    <>
+                    <Serie id={series.id} {...series} />
+                    {/* <div className="min-w-[300px] rounded-md overflow-hidden relative shadow-2xl ml-9 mb-4 mt-4 group " key={series.id}>
                         <img className="w-full object-cover" src={IMG_API + series.poster_path} alt={series.name} />
                         <div className=" flex flex-row justify-between">
                             <p className="font-bold text-lg mt-2 mb-2 ml-2">
@@ -51,7 +55,8 @@ function Series() {
                                 {series.overview ? series.overview : "No overview available"}
                             </p>
                         </div>
-                    </div>
+                    </div> */}
+                    </>
                 ))}
             </div>
         </div>

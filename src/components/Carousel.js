@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-
+import Movie from "./Movies";
 
 export function Carousel() {
     const [topMovies, setTopMovies] = useState([]);
