@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import Navbar from "../components/Navbar";
 
 function Upcoming() {
@@ -15,7 +15,7 @@ function Upcoming() {
         }
     }
 
-    useEffect(() => {
+    React.useEffect(() => {
     const options = {
         method: 'GET',
         headers: {

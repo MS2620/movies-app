@@ -6,6 +6,7 @@
     --primary: teal;
     --secondary: darkturquoise;
     --tertiary: #0e7490;
+    scroll-behavior: smooth;
 }
 /* Firefox */
 * {
@@ -26,4 +27,14 @@
     background-color: var(--secondary);
     border-radius: 14px;
     border: 3px solid var(--primary);
+}
+
+@layer components {
+    .card {
+        @apply w-[300px] rounded-md overflow-hidden relative shadow-2xl bg-teal-700 m-4;
+    }
+
+    .carousel_card {
+        @apply min-w-[300px] rounded-md overflow-hidden relative drop-shadow-2xl ml-9 mb-4 mt-4
+    }
 }

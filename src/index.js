@@ -22,7 +22,7 @@ root.render(
               <Route path="/movies" element={<Movies />} />
               <Route path="/series" element={<Series />} />
           </Routes>
-      </BrowserRouter>,
+      </BrowserRouter>
   </React.StrictMode>
 );
 

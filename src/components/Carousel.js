@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import Movie from "./Movies";
 
 export function Carousel() {
     const [topMovies, setTopMovies] = useState([]);
@@ -16,6 +15,7 @@ export function Carousel() {
         }
     }
 
+    React.useEffect(() => {
     const options = {
         method: 'GET',
         headers: {
@@ -29,12 +29,13 @@ export function Carousel() {
         .then(response => setTopMovies(response.results))
         .catch(err => console.error(err));
 
+    }, []);
 return (
     <>
     <p className="font-semibold text-4xl text-gray-300 ml-8 mb-2 inline-block">Top Rated Movies</p>
     <div className="flex flex-row flex-grow overflow-x-scroll bg-cyan-700 mb-2">
     {topMovies.map((movie) => (
-            <div className="min-w-[300px] rounded-md overflow-hidden relative drop-shadow-2xl ml-9 mb-4 mt-4 group " key={movie.id}>
+            <div className="carousel_card group " key={movie.id}>
                 <img className="w-full object-cover" src={IMG_API + movie.poster_path} alt={movie.title} />
                 <div className=" flex flex-row justify-between bg-cyan-600 h-20">
                     <p className="font-bold text-lg mt-2 mb-2 ml-2">
@@ -44,7 +45,7 @@ return (
                         {movie.vote_average}
                     </p>
                 </div>
-                <div className="px-2 pb-2 bg-white absolute bottom-0 right-0 left-0 translate-y-full group-hover:translate-y-0 transition-transform ease-in-out delay-150">
+                <div className="px-2 pb-2 bg-white absolute bottom-0 right-0 left-0 translate-y-full group-hover:translate-y-0 transition-transform ease-in-out delay-150 hover:overflow-auto hover:max-h-full">
                     <h2 className="font-bold text-lg">Overview: </h2>
                     <p className="text-gray-700 text-base">
                         {movie.overview ? movie.overview : "No overview available"}

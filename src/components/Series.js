@@ -12,7 +12,7 @@ const setVoteClass = (vote) => {
     }
 }
 const Serie = ({id, name, poster_path, overview, vote_average}) => (
-    <div className="w-[300px] rounded-md overflow-hidden relative shadow-2xl bg-teal-700 m-4 group" key={id}>
+    <div className="card" key={id}>
         <div>
             <img className="w-full object-cover h-[450px]" src={IMG_API + poster_path} alt={name} />
         </div>
@@ -24,7 +24,7 @@ const Serie = ({id, name, poster_path, overview, vote_average}) => (
                 {vote_average}
             </p>
         </div>
-        <div className="px-2 pb-2 bg-white absolute bottom-0 right-0 left-0 translate-y-full group-hover:translate-y-0 transition-transform ease-in-out delay-150">
+        <div className="px-2 pb-2 bg-white absolute bottom-0 right-0 left-0 translate-y-full group-hover:translate-y-0 transition-transform ease-in-out delay-150 hover:overflow-auto hover:max-h-full">
             <h2 className="font-bold text-lg">Overview: </h2>
             <p className="text-gray-700 text-base">
                 {overview ? overview : "No overview available"}
