@@ -24,6 +24,7 @@ function Movies() {
       .then((response) => response.json())
       .then((response) =>
         setTimeout(() => {
+          console.log(response.results);
           setMovies(response.results);
         }, 3000)
       )
@@ -38,9 +39,9 @@ function Movies() {
   return (
     <>
       <Navbar />
-      <div className="bg-cyan-700">
+      <div className="bg-gradient-to-r from-emerald-400 to-cyan-400">
         <Carousel />
-        <div className="flex flex-wrap justify-center bg-cyan-700 mb-2">
+        <div className="flex flex-wrap justify-center">
           {/* If no movies, display the loader */}
           {movies.length === 0 && <Loader />}
           {/* Goes through the movies array and displays all items in the array */}
@@ -51,17 +52,19 @@ function Movies() {
               </>
             ))}
         </div>
-        <div>
-          <select
-            className="bg-white rounded-lg h-6 w-24 ml-2 mr-2 mt-3"
-            value={page}
-            onChange={(e) => ChangePage(parseInt(e.target.value))}
-          >
-            <option value={1}>Page 1</option>
-            <option value={2}>Page 2</option>
-            <option value={3}>Page 3</option>
-            <option value={4}>Page 4</option>
-          </select>
+        <div className="bg-gradient-to-r from-emerald-400 to-cyan-400 w-full flex justify-end pr-40 lg:pr-32 pb-4">
+          <div className="">
+            <select
+              className="rounded-lg h-6 w-24 ml-2 mr-2 mt-3"
+              value={page}
+              onChange={(e) => ChangePage(parseInt(e.target.value))}
+            >
+              <option value={1}>Page 1</option>
+              <option value={2}>Page 2</option>
+              <option value={3}>Page 3</option>
+              <option value={4}>Page 4</option>
+            </select>
+          </div>
         </div>
       </div>
     </>

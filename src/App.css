@@ -31,10 +31,10 @@
 
 @layer components {
     .card {
-        @apply w-[300px] rounded-md overflow-hidden relative shadow-2xl bg-teal-700 m-4;
+        @apply w-[300px] rounded-md overflow-hidden relative shadow-2xl bg-gradient-to-r from-slate-500 to-slate-800 m-4;
     }
 
     .carousel_card {
-        @apply min-w-[300px] rounded-md overflow-hidden relative drop-shadow-2xl ml-9 mb-4 mt-4
+        @apply min-w-[300px] rounded-md overflow-hidden relative drop-shadow-2xl ml-9 mb-4 mt-4 bg-gradient-to-r from-slate-500 to-slate-800;
     }
 }

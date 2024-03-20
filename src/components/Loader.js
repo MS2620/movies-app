@@ -3,7 +3,7 @@ import Skeleton from "@mui/material/Skeleton";
 
 const Loader = () => {
   return (
-    <div className="flex flex-wrap justify-center bg-cyan-700">
+    <div className="flex flex-wrap justify-center bg-gradient-to-r from-emerald-400 to-cyan-400">
       {Array(10)
         .fill()
         .map((item, index) => (
